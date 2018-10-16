@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单据处理</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 14px;
+        }
+        input[type="text"], input[type="password"], textarea, select{
+            padding: 5px;
+            height: 32px;
+            line-height: 20px;
+            border: 1px solid #ccc;
+            background-color: transparent;
+            border-radius: 4px;
+            outline: none;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei";
+            vertical-align: middle;
+        }
+        .content{
+            padding: 0 15px;
+        }
+        .content p{
+            padding: 5px 0;
+            text-align: justify;
+            margin: 10px 0;
+        }
+        .content ul{
+            list-style: none;
+        }
+        .content ul li{
+            min-height: 32px;
+            line-height: 32px;
+            padding-left: 10px;
+            border-top: 1px solid #ecf1effa;
+            border-bottom: 1px solid #ecf1effa;
+            margin-top: -1px;
+        }
+        .content ul li span::after{
+            content: '';
+            display: inline-block;
+            width: 0; height: 0;
+            border: 7px solid transparent;
+            border-left-color: #ecf1effa;
+            border-left-width: 12px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .content ul li.active span::after{
+            transform: rotate(90deg);
+            transform-origin: 5px center;
+        }
+        .content ul li dl{
+            display: none;
+            padding: 0 0 10px 15px;
+        }
+        .content ul li.active dl{
+            display: block;
+        }
+        .content ul li dl dd{
+            line-height: 25px;
+            color: #ecf1effa;
+            overflow: hidden;
+            vertical-align: middle;
+        }
+        .content ul li dl dd em{
+            font-style: normal;
+            text-decoration: none;
+        }
+        .content ul li dl dd::after{
+            content: '';
+            display: inline-block;
+            background-size: contain;
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            margin-left: 2px;
+            margin-bottom: 2px;
+        }
+        .content ul li dl dd.loading::after{
+            background-image: url('aaa.gif');
+        }
+        .content ul li dl dd div{
+            display: inline-block;
+            width: 42px;
+            line-height: 1.2;
+            vertical-align: middle;
+        }
+        .content ul li dl dd i{
+            color: #333;
+            font-style: normal;
+            display: inline-block;
+            line-height: 1.2;
+        }
+        .content ul li dl dd i.no{ color: red }
+        .content ul li dl dd i.yes{ color: #ecf1effa }
+        .content ul li dl dd i.ing{ color: #666 }
+        .btn{
+            width: 100%;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            color: #00b66a;
+            background: none;
+            border: 1px solid #00b66a;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="content">
+        <p>工具栏</p>
+        <ul>
+            <li>
+                <span>企业服务局</span>
+                <dl class="second-list">
+                    <dd applytype=""><div><i>未知</i></div> <em>工业投资和技术改造项目指导计划</em></dd>
+                    <dd applytype=""><div><i>未知</i></div> <em>企业参与政府采购奖励专项</em></dd>
+                    <dd applytype=""><div><i>未知</i></div> <em>鼓励企业间协作配套专项资金申报</em></dd>
+                    <dd applytype=""><div><i>未知</i></div> <em>智慧家庭产业发展项目申报</em></dd>
+                </dl>
+            </li>
+            <li><span>科创局</span>
+                <dl class="second-list">
+                    <dd applytype="O1"><div><i>未知</i></div> <em>互联网+产业专项资金申报</em></dd>
+                    <dd applytype="O4"><div><i>未知</i></div> <em>互联网+示范应用项目的通知</em></dd>
+                    <dd applytype="O3"><div><i>未知</i></div> <em>文化科技融合专项资金申报</em></dd>
+                    <dd applytype="M1002001"><div><i>未知</i></div> <em>创业“新四军”资助</em></dd>
+                    <dd applytype=""><div><i>未知</i></div> <em>孵化器及众创空间专项资金、绩效评估申报</em></dd>
+                    <dd applytype=""><div><i>未知</i></div> <em>企业研发投入补贴资金申报</em></dd>
+                    <dd applytype="O2"><div><i>未知</i></div> <em>软件与信息服务业专项资金申报</em></dd>
+                    <dd applytype="M1002004"><div><i>未知</i></div> <em>企业技术合同登记奖励</em></dd>
+                    <dd applytype="M1002003"><div><i>未知</i></div> <em>高校院所科技成果转化</em></dd>
+                    <dd applytype="M1002002"><div><i>未知</i></div> <em>企业承接高校院所科技成果转化</em></dd>
+                    <dd applytype="O8"><div><i>未知</i></div> <em>创业服务机构奖励</em></dd>
+                    <dd applytype="M1002005"><div><i>未知</i></div> <em>人工智能产业专项资金</em></dd>
+                </dl>
+            </li>
+            <li><span>知识产权局</span>
+                <dl class="second-list">
+                    <dd applytype="P1"><div><i>未知</i></div> <em>资助兑现</em></dd>
+                    <dd applytype="P2"><div><i>未知</i></div> <em>配套奖励</em></dd>
+                    <dd applytype="P3"><div><i>未知</i></div> <em>补助项目</em></dd>
+                    <dd applytype="P5"><div><i>未知</i></div> <em>专题项目-信息利用</em></dd>
+                    <dd applytype="P6"><div><i>未知</i></div> <em>专题项目-战略申请补助</em></dd>
+                </dl>
+            </li>
+            <li><span>投促局</span>
+                <dl class="second-list">
+                    <dd applytype="M1003001"><div><i>未知</i></div> <em>促进外资企业投资发展专项资金</em></dd>
+                </dl>
+            </li>
+        </ul>
+    </section>
+
+<script type="text/javascript">
+    var domain = 'http://2ycr43.natappfree.cc';
+    var openId = getArgument('openId');
+    var ul = document.querySelector('ul');
+    var spans = document.querySelectorAll('ul li span');
+    spans.forEach(function(span){
+        span.addEventListener('click', function(){
+            this.parentElement.classList.toggle('active');
+        })
+    })
+    ul.addEventListener('click', function(event){
+        var t = event.target;
+        var type;
+        var div;
+        if (t.nodeName === 'EM'){
+            dd = t.parentElement;
+            div = dd.querySelector('div');
+            dd.classList.add('loading');
+            type = dd.getAttribute('applytype');
+            var xhr = new XMLHttpRequest();
+            var url = domain + '/index/userapply/sysUserApply/list?type='+ type +'&openId='+ openId;
+            xhr.open('GET', url, true);
+            xhr.onload = function(){
+                dd.classList.remove('loading');
+                if (this.status == 200){
+                    var response = this.response;
+                    if (Object.prototype.toString.call(response) === '[object String]') {
+                        try {
+                            response = eval('('+ response +')');
+                        } catch (error) { }
+                    }
+                    if (response && Object.prototype.toString.call(response) === '[object Object]'){
+                        if (response.returnCode == 0){
+                            if (response.data && response.data.length){
+                                var arr = [];
+                                for (var k = 0; k < response.data.length; k++) {
+                                    arr.push(response.data[k].status);
+                                }
+                                changeStatus(div, arr);
+                            }
+                        } else{
+                            alert('returnCode不为0')
+                        }
+                    }else{
+                        alert('系统错误，请稍后再试！');
+                    }
+                }
+            }
+            xhr.onerror = function(){
+                dd.classList.remove('loading');
+                alert('系统错误，请稍后再试！');
+            }
+            xhr.send();
+        }
+    })
+
+    function getArgument(name){
+        return (window.location.href.match(new RegExp("(?:(?:^|&)|\\?)"+ name +"=([^&]*)(?:&|$)"))||[])[1]||'';
+    }
+    function changeStatus(div, arr){
+        var classLists = ['', 'ing', 'yes', 'no'];
+        var messages = ['未申报', '审核中', '已通过', '未通过'];
+        var i = document.createElement('i');
+        var temp;
+        div.innerHTML = '';
+        arr.forEach(function(v, k){
+            temp = i.cloneNode();
+            temp.classList.add(classLists[v]);
+            temp.innerHTML = messages[v];
+            div.appendChild(temp);
+        })
+    }
+</script>
+
+</body>
+</html>
