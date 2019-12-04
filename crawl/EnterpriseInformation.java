@@ -19,7 +19,7 @@ public class EnterpriseInformation {
 	
 	public static void main(String[] args) {
 		EnterpriseInformation t = new EnterpriseInformation();
-		String companyName = "武汉银服";
+		String companyName = "测试";
 		Document doc = t.getDocument("https://www.qichacha.com/search?key="+ companyName);
 		
 		//搜索结果列表

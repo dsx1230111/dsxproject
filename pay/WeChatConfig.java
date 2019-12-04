@@ -1,4 +1,4 @@
-package com.rogrand.enterprisehome.modules.pay;
+package pay;
 /** 
  * 微信支付配置文件 
  * 2018/10/30

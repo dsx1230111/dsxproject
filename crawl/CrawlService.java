@@ -1,28 +1,12 @@
 package crawl;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFDateUtil;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import crawl.model.Company;
 import crawl.util.CrawlUtil;
 import crawl.util.ExcleUtil;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 爬取企业数据
@@ -56,7 +40,6 @@ public class CrawlService {
 	
 	/**
 	 * 爬取数据
-	 * @param args
 	 */
 	public static List<List<String>> crawl(List<String> companyNameList){
 		List<List<String>> dataList = new ArrayList<List<String>>();
@@ -71,7 +54,6 @@ public class CrawlService {
 	
 	/**
 	 * 生成excle
-	 * @param args
 	 */
 	public static void exportData(List<List<String>> DataList){
 		String path = "E:\\";

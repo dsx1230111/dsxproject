@@ -1,4 +1,4 @@
-package com.rogrand.enterprisehome.modules.pay;
+package pay;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
