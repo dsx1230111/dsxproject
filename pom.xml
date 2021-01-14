@@ -11,7 +11,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.0.8.RELEASE</spring.version>
-		<poi.version>3.9</poi.version>
+		<poi.version>4.1.2</poi.version>
 	</properties>
 	<dependencies>
 		<dependency>
